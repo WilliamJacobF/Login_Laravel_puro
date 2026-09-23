@@ -9,12 +9,20 @@
 
 <body>
     <h1>login</h1>
+    @if (session()->has('success'))
+    {{ session()->get('success') }}
+    @endif
+    @error('error')
+    <span>{{ $message }}</span>
+    @enderror
+
     <form action="{{ route('login-store') }}" method="post">
         @csrf
-        <input type="text" name="email" value="teste@teste@gmail.com">
-        <input type="password" name="senha" value="12345678">
+        <input type="text" name="email" value="teste@test@gmail.com">
+        <input type="password" name="password" value="1235678">
         <button type="submit">Enviar</button>
     </form>
+
 </body>
 
 </html>
