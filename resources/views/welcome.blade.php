@@ -8,8 +8,8 @@
 </head>
 
 <body>
-    <h1>Bem Vindo ao Home, Deu certo o Login!!!!
-    </h1>
+    <h1>Bem Vindo ao Home, Deu certo o Login!!!!</h1>
+    <a href="{{ route('login-destroy') }}">Logout</a>
 </body>
 
 </html>

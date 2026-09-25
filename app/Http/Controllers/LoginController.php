@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Auth\Events\Logout;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -20,6 +21,11 @@ class LoginController extends Controller
         } else {
             return redirect()->route('login-index')->withErrors(['error' => 'email ou senha inválidos']);
             }
+    }
+
+    public function destroy(){
+        Auth::logout();
+        return redirect()->route('login-index');
     }
 
 }
